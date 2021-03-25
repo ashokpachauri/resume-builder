@@ -10,7 +10,7 @@ export default function HeaderNavbar() {
             <section className="container">
                 <Link href="/">
                     <a>
-                        <img src="/images/logo1.png" alt="wtfresume logo (resume builder)" className={styles.logo} />
+                        <img src="/images/logo1.png" alt="ryresume logo (resume builder)" className={styles.logo} />
                     </a>
                 </Link>
 
@@ -26,11 +26,9 @@ export default function HeaderNavbar() {
                             </Link>
                         </div>
 
-                        <div className={styles.navItem}>EN</div>
-
                         <div className={styles.navItem}>
-                            <a href="https://github.com/sramezani/resume-builder" target="_blank" rel="noopener noreferrer">
-                                github
+                            <a href="https://www.ropeyou.com/dashboard" target="_blank" rel="noopener noreferrer">
+                                RYDashboard
                             </a>
                         </div>
                     </Nav>
