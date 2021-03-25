@@ -1,7 +1,7 @@
 # RY Resume (Resume Builder)
 
 Modern real-time design and 100% free resume builder.
-### [https://resume-builder-eight.vercel.app/](https://https://resume-builder-eight.vercel.app/ "ryresume")
+### [https://resume.ropeyou.com/](https://resume.ropeyou.com/ "ryresume")
 
 
 ### Simple demo: 
@@ -43,7 +43,7 @@ npm run dev
 
 
 
-#### [Go to RYresume website](https://resume-builder-eight.vercel.app/ "ryresume")
+#### [Go to RYresume website](https://resume.ropeyou.com/ "ryresume")
 
 
 ### Contributing
