@@ -29,7 +29,7 @@ export default function Home() {
 
                 <section className={[styles.second].join(' ')}>
                     <div className={styles.secondTitle}>
-                        <h2>Why trying WTFResume?</h2>
+                        <h2>Why trying RYResume?</h2>
                     </div>
 
                     <div className={['row justify-content-md-center', styles.itemsRow].join(' ')}>
@@ -64,24 +64,7 @@ export default function Home() {
                                 </article>
                             </div>
                             <div className={['col-md-5', styles.secondItem].join(' ')}>
-                                <article className={['row', styles.item].join(' ')}>
-                                    <div className={[styles.itemImg, styles.itemImgBg3].join(' ')}>
-                                        <img
-                                            src="images/icons/register.png"
-                                            alt="No need register"
-                                            className="imgResponsive verticalCenter"
-                                        />
-                                    </div>
-                                    <p>No need to register</p>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={['row justify-content-md-center', styles.itemsRow].join(' ')}>
-                        <div className="col-md-10 row justify-content-md-center">
-                            <div className={['col-md-7', styles.secondItem].join(' ')}>
-                                <article className={['row', styles.item].join(' ')}>
+                               <article className={['row', styles.item].join(' ')}>
                                     <div className={[styles.itemImg, styles.itemImgBg5].join(' ')}>
                                         <img
                                             src="images/icons/real-time.png"
@@ -90,14 +73,6 @@ export default function Home() {
                                         />
                                     </div>
                                     <p>Real time design</p>
-                                </article>
-                            </div>
-                            <div className={['col-md-5', styles.secondItem].join(' ')}>
-                                <article className={['row', styles.item].join(' ')}>
-                                    <div className={[styles.itemImg, styles.itemImgBg6].join(' ')}>
-                                        <img src="images/icons/github.png" alt="open source" className="imgResponsive verticalCenter" />
-                                    </div>
-                                    <p>Open-source</p>
                                 </article>
                             </div>
                         </div>
