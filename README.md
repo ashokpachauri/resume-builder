@@ -1,7 +1,7 @@
-# WTF Resume (Resume Builder)
+# RY Resume (Resume Builder)
 
 Modern real-time design and 100% free resume builder.
-### [https://wtfresume.com](https://wtfresume.com "wtfresume")
+### [https://resume-builder-eight.vercel.app/](https://https://resume-builder-eight.vercel.app/ "ryresume")
 
 
 ### Simple demo: 
@@ -43,7 +43,7 @@ npm run dev
 
 
 
-#### [Go to WTFresume website](https://wtfresume.com "wtfresume")
+#### [Go to RYresume website](https://resume-builder-eight.vercel.app/ "ryresume")
 
 
 ### Contributing
