@@ -22,15 +22,47 @@ export default function Footer() {
                                     <a>Resume Builder</a>
                                 </Link>
                             </li>
-                            <li>EN</li>
+                             <li>
+                                <a href="https://www.ropeyou.com" target="_blank" rel="noopener noreferrer">
+                                    Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.ropeyou.com/terms" target="_blank" rel="noopener noreferrer">
+                                    T&C
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.ropeyou.com/refund-return-policies.php" target="_blank" rel="noopener noreferrer"></a>
+                            </li>
                         </ul>
                     </div>
                     <div className="col-md-4">
                         <ul>
                             <li className={styles.footerNavTitle}>LINKS</li>
                             <li>
-                                <a href="https://github.com/sramezani/resume-builder" target="_blank" rel="noopener noreferrer">
-                                    github
+                                <a href="https://www.ropeyou.com/dashboard" target="_blank" rel="noopener noreferrer">
+                                    Dashboard
+                                </a>
+                            </li>
+                             <li>
+                                <a href="https://www.ropeyou.com/broadcasts" target="_blank" rel="noopener noreferrer">
+                                    Broadcasts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.ropeyou.com/bridge" target="_blank" rel="noopener noreferrer">
+                                    Bridge
+                                </a>
+                            </li>
+                             <li>
+                                <a href="https://www.ropeyou.com/blog-space" target="_blank" rel="noopener noreferrer">
+                                    Bridge
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.ropeyou.com/streaming.php?file_key=a87ff679a2f3e71d9181a67b7542122c" target="_blank" rel="noopener noreferrer">
+                                    Video Profiles
                                 </a>
                             </li>
                             <li>
@@ -43,7 +75,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className={styles.footerCopyright}>wtfresume</div>
+            <div className={styles.footerCopyright}>RYResume by RopeYou</div>
         </footer>
     );
 }
