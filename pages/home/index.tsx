@@ -103,7 +103,7 @@ export default function Home() {
                     <p className={styles.bold}>what do you think! isn&lsquo;t it amazing?</p>
                     <div className={styles.crBtn}>
                         <Link href="/resume-builder">
-                            <a>RopeYou Resume Builder! Show me how</a>
+                            <a>RYResume! Show me how</a>
                         </Link>
                     </div>
                 </section>
