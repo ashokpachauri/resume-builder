@@ -90,7 +90,7 @@ export default function Home() {
                             <iframe
                                 width="100%"
                                 height="600"
-                                src="https://www.youtube.com/embed/u5eIsENOLUc?rel=0&showinfo=1"
+                                src="https://youtu.be/lZQgDmSU-FQ?rel=0&showinfo=1"
                                 frameBorder="0"
                                 allowFullScreen
                             ></iframe>
