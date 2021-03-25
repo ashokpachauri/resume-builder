@@ -57,7 +57,7 @@ export default function Footer() {
                             </li>
                              <li>
                                 <a href="https://www.ropeyou.com/blog-space" target="_blank" rel="noopener noreferrer">
-                                    Bridge
+                                    Blogger
                                 </a>
                             </li>
                             <li>
