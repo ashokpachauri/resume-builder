@@ -234,7 +234,7 @@ export const importUserData = (data) => {
     appStore.dispatch(updateWorkExperience(obj.workExperience));
     appStore.dispatch(updateEducation(obj.education));
     appStore.dispatch(updateSkill(obj.skills));
-    appStore.dispatch(updateSkill(obj.languages));
+    appStore.dispatch(updateLanguage(obj.languages));
     appStore.dispatch(updateTheme(obj.theme));
     appStore.dispatch(updateItemStatus(obj.itemStatus));
 };
