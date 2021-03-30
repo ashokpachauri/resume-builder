@@ -13,7 +13,7 @@ const initialState = {
         workExperienceTitle: 'Work experience',
         educationTitle: 'Education',
         skillsTitle: 'Skills',
-        LanguageTitle:'Languages',
+        languageTitle:'Languages',
         photo: 'images/nobody.jpg',
     },
     workExperience: [{ id: '1' }],
