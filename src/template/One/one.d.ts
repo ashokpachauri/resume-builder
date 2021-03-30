@@ -20,6 +20,7 @@ export interface TProps {
     workExperience: [];
     education: [];
     skills: [];
+    languages: [];
     itemStatus: {
         [key: string]: boolean;
     };
