@@ -6,7 +6,7 @@ import { Toast, Util } from '@lib';
 
 import { Text, Dnd2Column } from '@component';
 
-import { addSkill, updateSkill, deleteSkillData } from '../../../../redux/core/actions';
+import { addLanguage, updateLanguage, deleteLanguageData } from '../../../../redux/core/actions';
 
 // import styles from './skills.module.scss';
 
