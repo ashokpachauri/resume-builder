@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Text } from '@component';
-import { WorkExperience, Education, Skills, Photo } from './Elements';
+import { WorkExperience, Education, Skills, Photo, Languages } from './Elements';
 import styles from './one.module.scss';
 
 import { TProps } from './one';
@@ -99,6 +99,19 @@ class Template extends React.Component<TProps> {
                         <Skills data={this.props.skills} />
                     </div>
                 )}
+                {itemStatus.languages && (
+                    <div className={[styles.skills, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.LanguageTitle}
+                            statename="userData.LanguageTitle"
+                            placeholder="Language"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+
+                        <Languages data={this.props.languages} />
+                    </div>
+                )}
             </div>
         );
     }
@@ -110,6 +123,7 @@ const mapStateToProps = (store: any) => ({
     workExperience: store.workExperience,
     education: store.education,
     skills: store.skills,
+    languages: store.languages,
     itemStatus: store.itemStatus,
 });
 
