@@ -100,7 +100,7 @@ class Template extends React.Component<TProps> {
                     </div>
                 )}
                 {itemStatus.languages && (
-                    <div className={[styles.skills, styles.box].join(' ')}>
+                    <div className={[styles.languages, styles.box].join(' ')}>
                         <Text
                             value={this.props.userData.LanguageTitle}
                             statename="userData.LanguageTitle"
