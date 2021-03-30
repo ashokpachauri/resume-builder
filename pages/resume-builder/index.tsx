@@ -35,7 +35,7 @@ class Home extends React.Component<TProps> {
                     <title>Resume Builder | RopeYou</title>
                 </Head>
                 <div style={{ fontFamily: this.props.theme.fontFamily }}>
-                    <div className={styles.loading} style={{ background: #f3f4fb }}>
+                    <div className={styles.loading} style={{ background: this.props.theme.color }}>
                         <div className={styles.loading_gradient}></div>
                     </div>
 
