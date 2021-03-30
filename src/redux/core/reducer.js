@@ -18,6 +18,7 @@ const initialState = {
     workExperience: [{ id: '1' }],
     education: [{ id: '1' }],
     skills: [{ id: '1' }],
+    languages: [{ id: '1' }],
     theme: {
         color: '#03A9F4',
         fontFamily: 'Source Sans Pro',
@@ -29,6 +30,7 @@ const initialState = {
         workExperience: true,
         education: true,
         skills: true,
+        languages: true,
     },
 };
 
@@ -236,7 +238,62 @@ export default function core(state = initialState, action) {
                 ...state,
                 skills: [...state.skills, ...action.payload],
             };
+        case actionTypes.ADD_NEW_LANGUAGE:
+            if (!action.payload) return state;
 
+            return {
+                ...state,
+                languages: [
+                    ...state.languages,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_LANGUAGE:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                languages: action.payload,
+            });
+
+        case actionTypes.UPDATE_LANGUAGE_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newLanguages = JSON.parse(JSON.stringify(state.languages));
+            const languagesIndex = state.languages
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (languagesIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newLanguages[languagesIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                languages: [...newLanguages],
+            };
+
+        case actionTypes.DELETE_LANGUAGE_DATA:
+            if (!action.payload) return state;
+
+            let newL = JSON.parse(JSON.stringify(state.languages));
+            newL = state.languages.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                languages: [...newL],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_LANGUAGE_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                languages: [...state.languages, ...action.payload],
+            };
         default:
             return { ...state };
     }
