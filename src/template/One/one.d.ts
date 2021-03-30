@@ -15,6 +15,7 @@ export interface TProps {
         workExperienceTitle: string;
         educationTitle: string;
         skillsTitle: string;
+        languageTitle: string;
     };
     workExperience: [];
     education: [];

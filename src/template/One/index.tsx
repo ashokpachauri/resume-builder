@@ -103,7 +103,7 @@ class Template extends React.Component<TProps> {
                     <div className={[styles.languages, styles.box].join(' ')}>
                         <Text
                             value={this.props.userData.languageTitle}
-                            statename="userData.LanguageTitle"
+                            statename="userData.languageTitle"
                             placeholder="Language"
                             customclass={styles.title}
                             tag="div"
