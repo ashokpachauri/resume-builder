@@ -18,11 +18,13 @@ export interface TProps {
         educationTitle: string;
         skillsTitle: string;
         languageTitle: string;
+        achievementTitle: string;
     };
     workExperience: [];
     education: [];
     skills: [];
     languages: [];
+    achievements: [];
     itemStatus: {
         [key: string]: boolean;
     };

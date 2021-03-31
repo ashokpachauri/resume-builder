@@ -230,6 +230,12 @@ class TopNavbar extends React.Component<TProps, TState> {
                             Languages
                         </span>
                     </div>
+                    <div className={styles.sectionItem}>
+                        {this._switchBtn('achievements')}
+                        <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('achievements')}>
+                            Certifications
+                        </span>
+                    </div>
                 </div>
                 <div className={styles.sectionRight}>
                     <div className={styles.sectionItem}>

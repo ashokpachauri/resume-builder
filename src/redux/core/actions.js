@@ -201,6 +201,49 @@ export const addDeletedLanguageItem = (data) => {
     };
 };
 
+
+export const addAchievement = () => {
+    const id = Util.randomId();
+    const data = {
+        id,
+        title: '',
+    };
+
+    return {
+        type: actionTypes.ADD_NEW_ACHIEVEMENT,
+        payload: data,
+    };
+};
+
+export const updateAchievement = (data) => {
+    return {
+        type: actionTypes.UPDATE_ACHIEVEMENT,
+        payload: data,
+    };
+};
+
+export const updateAchievementData = (id, data) => {
+    return {
+        type: actionTypes.UPDATE_ACHIEVEMENT_DATA,
+        payloadId: id,
+        payload: data,
+    };
+};
+
+export const deleteAchievementData = (id) => {
+    return {
+        type: actionTypes.DELETE_ACHIEVEMENT_DATA,
+        payload: id,
+    };
+};
+
+export const addDeletedAchievementItem = (data) => {
+    return {
+        type: actionTypes.ADD_DELETED_WORK_ACHIEVEMENT_ITEM,
+        payload: data,
+    };
+};
+
 export const exportUserData = () => {
     return (dispatch, getState) => {
         const userData = getState().userData;
@@ -208,6 +251,7 @@ export const exportUserData = () => {
         const education = getState().education;
         const skills = getState().skills;
         const languages = getState().languages;
+        const achievements = getState().achievements;
         const theme = getState().theme;
         const itemStatus = getState().itemStatus;
 
@@ -218,6 +262,7 @@ export const exportUserData = () => {
             education,
             skills,
             languages,
+            achievements,
             theme,
             itemStatus,
         };
@@ -235,6 +280,7 @@ export const importUserData = (data) => {
     appStore.dispatch(updateEducation(obj.education));
     appStore.dispatch(updateSkill(obj.skills));
     appStore.dispatch(updateLanguage(obj.languages));
+    appStore.dispatch(updateLanguage(obj.achievements));
     appStore.dispatch(updateTheme(obj.theme));
     appStore.dispatch(updateItemStatus(obj.itemStatus));
 };

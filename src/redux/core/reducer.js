@@ -16,12 +16,14 @@ const initialState = {
         educationTitle: 'Education',
         skillsTitle: 'Skills',
         languageTitle:'Languages',
+        achievementTitle:'Certification',
         photo: 'images/nobody.jpg',
     },
     workExperience: [{ id: '1' }],
     education: [{ id: '1' }],
     skills: [{ id: '1' }],
     languages: [{ id: '1' }],
+    achievements: [{ id: '1' }],
     theme: {
         color: '#03A9F4',
         fontFamily: 'Source Sans Pro',
@@ -297,6 +299,62 @@ export default function core(state = initialState, action) {
             return {
                 ...state,
                 languages: [...state.languages, ...action.payload],
+            };
+        case actionTypes.ADD_NEW_ACHIEVEMENT:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                achievements: [
+                    ...state.achievements,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_ACHIEVEMENT:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                achievements: action.payload,
+            });
+
+        case actionTypes.UPDATE_ACHIEVEMENT_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newAchievements = JSON.parse(JSON.stringify(state.achievements));
+            const achievementsIndex = state.achievements
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (achievementsIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newAchievements[achievementsIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                achievements: [...newLanguages],
+            };
+
+        case actionTypes.DELETE_ACHIEVEMENT_DATA:
+            if (!action.payload) return state;
+
+            let newA = JSON.parse(JSON.stringify(state.achievements));
+            newL = state.achievements.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                achievements: [...newA],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_ACHIEVEMENT_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                achievements: [...state.achievements, ...action.payload],
             };
         default:
             return { ...state };
