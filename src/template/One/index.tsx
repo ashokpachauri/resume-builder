@@ -122,7 +122,7 @@ class Template extends React.Component<TProps> {
                             tag="div"
                         />
 
-                        <Languages data={this.props.achievements} />
+                        <Achievements data={this.props.achievements} />
                     </div>
                 )}
                 {itemStatus.additionalInfo && (
