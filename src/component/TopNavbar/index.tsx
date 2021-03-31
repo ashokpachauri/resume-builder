@@ -253,7 +253,7 @@ class TopNavbar extends React.Component<TProps, TState> {
                     <div className={styles.sectionItem}>
                         {this._switchBtn('additionalInfo')}
                         <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('additionalInfo')}>
-                            Profile
+                            Additional Info
                         </span>
                     </div>
                 </div>
