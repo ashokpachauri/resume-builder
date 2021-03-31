@@ -405,7 +405,7 @@ export default function core(state = initialState, action) {
             if (!action.payload) return state;
 
             const newI = JSON.parse(JSON.stringify(state.interests));
-            newL = state.interests.filter(({ id }) => id !== action.payload);
+            newI = state.interests.filter(({ id }) => id !== action.payload);
             return {
                 ...state,
                 interests: [...newI],
