@@ -10,6 +10,8 @@ const initialState = {
         profile: '',
         infoTitle: 'Personal info',
         profileTitle: 'Profile',
+        additionalInfoTitle:'Additional Information';
+        additionalInfo:'Some work details, achievements or much more...';
         workExperienceTitle: 'Work experience',
         educationTitle: 'Education',
         skillsTitle: 'Skills',
