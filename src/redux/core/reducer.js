@@ -11,13 +11,14 @@ const initialState = {
         dob: '',
         infoTitle: 'Personal info',
         profileTitle: 'Profile',
-        additionalInfoTitle:'Additional Information',
-        additionalInfo:'Some work details, achievements or much more...',
+        additionalInfoTitle: 'Additional Information',
+        additionalInfo: 'Some work details, achievements or much more...',
         workExperienceTitle: 'Work experience',
         educationTitle: 'Education',
         skillsTitle: 'Skills',
-        languageTitle:'Languages',
-        achievementTitle:'Certification',
+        languageTitle: 'Languages',
+        achievementTitle: 'Certification',
+        interestTitle: 'Interests',
         photo: 'images/nobody.jpg',
     },
     workExperience: [{ id: '1' }],
@@ -25,6 +26,7 @@ const initialState = {
     skills: [{ id: '1' }],
     languages: [{ id: '1' }],
     achievements: [{ id: '1' }],
+    interests: [{ id: '1' }],
     theme: {
         color: '#03A9F4',
         fontFamily: 'Source Sans Pro',
@@ -344,7 +346,7 @@ export default function core(state = initialState, action) {
         case actionTypes.DELETE_ACHIEVEMENT_DATA:
             if (!action.payload) return state;
 
-            let newA = JSON.parse(JSON.stringify(state.achievements));
+            const newA = JSON.parse(JSON.stringify(state.achievements));
             newL = state.achievements.filter(({ id }) => id !== action.payload);
             return {
                 ...state,

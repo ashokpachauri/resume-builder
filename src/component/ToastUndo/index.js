@@ -1,7 +1,14 @@
 import React from 'react';
 
 import { appStore } from '../../redux/store';
-import { addDeletedWorkExperienceItem, addDeletedEducationItem, addDeletedSkillItem , addDeletedLanguageItem, addDeletedAchievementItem } from '../../redux/core/actions';
+import {
+    addDeletedWorkExperienceItem,
+    addDeletedEducationItem,
+    addDeletedSkillItem,
+    addDeletedLanguageItem,
+    addDeletedAchievementItem,
+    addDeletedInterestItem,
+} from '../../redux/core/actions';
 
 import styles from './toastUndo.module.scss';
 
@@ -17,8 +24,10 @@ const ToastUndo = ({ itemId, message, closeToast, data, type }) => {
             appStore.dispatch(addDeletedSkillItem(deletedItem));
         } else if (type === 'language') {
             appStore.dispatch(addDeletedLanguageItem(deletedItem));
-        }else if (type === 'achievements') {
+        } else if (type === 'achievements') {
             appStore.dispatch(addDeletedAchievementItem(deletedItem));
+        } else if (type === 'interests') {
+            appStore.dispatch(addDeletedInterestItem(deletedItem));
         }
 
         closeToast();

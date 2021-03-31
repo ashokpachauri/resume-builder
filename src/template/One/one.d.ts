@@ -13,12 +13,13 @@ export interface TProps {
         userData: string;
         profileTitle: string;
         profile: string;
-        additionalInfoTitle:string;
-        additionalInfo:string;
+        additionalInfoTitle: string;
+        additionalInfo: string;
         workExperienceTitle: string;
         educationTitle: string;
         skillsTitle: string;
         languageTitle: string;
+        interestTitle: string;
         achievementTitle: string;
     };
     workExperience: [];
@@ -26,6 +27,7 @@ export interface TProps {
     skills: [];
     languages: [];
     achievements: [];
+    interests: [];
     itemStatus: {
         [key: string]: boolean;
     };

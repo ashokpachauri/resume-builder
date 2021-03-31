@@ -158,7 +158,6 @@ export const addDeletedSkillItem = (data) => {
     };
 };
 
-
 export const addLanguage = () => {
     const id = Util.randomId();
     const data = {
@@ -201,7 +200,6 @@ export const addDeletedLanguageItem = (data) => {
     };
 };
 
-
 export const addAchievement = () => {
     const id = Util.randomId();
     const data = {
@@ -243,7 +241,47 @@ export const addDeletedAchievementItem = (data) => {
         payload: data,
     };
 };
+export const addInterest = () => {
+    const id = Util.randomId();
+    const data = {
+        id,
+        title: '',
+    };
 
+    return {
+        type: actionTypes.ADD_NEW_INTEREST,
+        payload: data,
+    };
+};
+
+export const updateInterest = (data) => {
+    return {
+        type: actionTypes.UPDATE_INTEREST,
+        payload: data,
+    };
+};
+
+export const updateInterestData = (id, data) => {
+    return {
+        type: actionTypes.UPDATE_INTEREST_DATA,
+        payloadId: id,
+        payload: data,
+    };
+};
+
+export const deleteInterestData = (id) => {
+    return {
+        type: actionTypes.DELETE_INTEREST_DATA,
+        payload: id,
+    };
+};
+
+export const addDeletedInterestItem = (data) => {
+    return {
+        type: actionTypes.ADD_DELETED_WORK_INTEREST_ITEM,
+        payload: data,
+    };
+};
 export const exportUserData = () => {
     return (dispatch, getState) => {
         const userData = getState().userData;
@@ -252,6 +290,7 @@ export const exportUserData = () => {
         const skills = getState().skills;
         const languages = getState().languages;
         const achievements = getState().achievements;
+        const interests = getState().interests;
         const theme = getState().theme;
         const itemStatus = getState().itemStatus;
 
@@ -263,6 +302,7 @@ export const exportUserData = () => {
             skills,
             languages,
             achievements,
+            interests,
             theme,
             itemStatus,
         };
@@ -280,7 +320,8 @@ export const importUserData = (data) => {
     appStore.dispatch(updateEducation(obj.education));
     appStore.dispatch(updateSkill(obj.skills));
     appStore.dispatch(updateLanguage(obj.languages));
-    appStore.dispatch(updateLanguage(obj.achievements));
+    appStore.dispatch(updateAchievement(obj.achievements));
+    appStore.dispatch(updateInterest(obj.interests));
     appStore.dispatch(updateTheme(obj.theme));
     appStore.dispatch(updateItemStatus(obj.itemStatus));
 };

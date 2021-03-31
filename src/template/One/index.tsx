@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Text } from '@component';
-import { WorkExperience, Education, Skills, Languages, Achievements, Photo } from './Elements';
+import { WorkExperience, Education, Skills, Languages, Achievements, Interests, Photo } from './Elements';
 import styles from './one.module.scss';
 
 import { TProps } from './one';
@@ -39,7 +39,7 @@ class Template extends React.Component<TProps> {
                         <Text value={this.props.userData.address} statename="userData.address" placeholder="address: Berlin, Germany" />
                         <Text value={this.props.userData.email} statename="userData.email" placeholder="sample@email.com" />
                         <Text value={this.props.userData.mobile} statename="userData.mobile" placeholder="(+1) 123 456 7890" />
-                        <Text value={this.props.userData.dob} statename="userData.dob" placeholder="DD/MM/YYYY" />
+                        <Text value={this.props.userData.dob} statename="userData.dob" placeholder="DOB : DD/MM/YYYY" />
                         <Text value={this.props.userData.userData} statename="userData.userData" placeholder="Your other data" />
                     </div>
                 )}
@@ -124,6 +124,19 @@ class Template extends React.Component<TProps> {
                         />
 
                         <Achievements data={this.props.achievements} />
+                    </div>
+                )}
+                {itemStatus.interests && (
+                    <div className={[styles.interests, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.interestTitle}
+                            statename="userData.interestTitle"
+                            placeholder="Interests"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+
+                        <Interests data={this.props.interests} />
                     </div>
                 )}
                 {itemStatus.additionalInfo && (
