@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { appStore } from '../../redux/store';
-import { updateUserData, updateWorkExperienceData, updateEducationData, updateSkillData } from '../../redux/core/actions';
+import { updateUserData, updateWorkExperienceData, updateEducationData, updateSkillData, updateLanguageData } from '../../redux/core/actions';
 
 import { Util } from '@lib';
 
@@ -57,6 +57,8 @@ function Text(props: TProps) {
             appStore.dispatch(updateEducationData(stateid, data));
         } else if (storeComponents[0] === 'skills') {
             appStore.dispatch(updateSkillData(stateid, data));
+        }else if (storeComponents[0] === 'languages') {
+            appStore.dispatch(updateLanguageData(stateid, data));
         }
     };
 

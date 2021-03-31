@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Text } from '@component';
-import { WorkExperience, Education, Skills, Photo, Languages } from './Elements';
+import { WorkExperience, Education, Skills, Languages, Photo } from './Elements';
 import styles from './one.module.scss';
 
 import { TProps } from './one';
