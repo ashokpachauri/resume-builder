@@ -168,6 +168,7 @@ const mapStateToProps = (store: any) => ({
     skills: store.skills,
     languages: store.languages,
     achievements: store.achievements,
+    interests: store.interests,
     itemStatus: store.itemStatus,
 });
 
