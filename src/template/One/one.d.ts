@@ -12,6 +12,8 @@ export interface TProps {
         userData: string;
         profileTitle: string;
         profile: string;
+        additionalInfoTitle:string;
+        additionalInfo:string;
         workExperienceTitle: string;
         educationTitle: string;
         skillsTitle: string;

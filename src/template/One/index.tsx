@@ -112,6 +112,22 @@ class Template extends React.Component<TProps> {
                         <Languages data={this.props.languages} />
                     </div>
                 )}
+                {itemStatus.additionalInfo && (
+                    <div className={[styles.additionalInfo, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.additionalInfoTitle}
+                            statename="userData.additionalInfoTitle"
+                            placeholder="Additional Information"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+                        <Text
+                            value={this.props.userData.additionalInfo}
+                            statename="userData.additionalInfo"
+                            placeholder="Some work details, achievements or much more..."
+                        />
+                    </div>
+                )}
             </div>
         );
     }
