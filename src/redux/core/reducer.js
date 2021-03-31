@@ -347,6 +347,7 @@ export default function core(state = initialState, action) {
                 achievements: [...newAchievements],
             };
 
+
         case actionTypes.DELETE_ACHIEVEMENT_DATA:
             if (!action.payload) return state;
 
