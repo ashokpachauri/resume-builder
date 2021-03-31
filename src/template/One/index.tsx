@@ -39,6 +39,7 @@ class Template extends React.Component<TProps> {
                         <Text value={this.props.userData.address} statename="userData.address" placeholder="address: Berlin, Germany" />
                         <Text value={this.props.userData.email} statename="userData.email" placeholder="sample@email.com" />
                         <Text value={this.props.userData.mobile} statename="userData.mobile" placeholder="(+1) 123 456 7890" />
+                        <Text value={this.props.userData.dob} statename="userData.dob" placeholder="DD/MM/YYYY" />
                         <Text value={this.props.userData.userData} statename="userData.userData" placeholder="Your other data" />
                     </div>
                 )}

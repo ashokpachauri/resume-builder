@@ -8,6 +8,7 @@ const initialState = {
         mobile: '',
         userData: '',
         profile: '',
+        dob: '',
         infoTitle: 'Personal info',
         profileTitle: 'Profile',
         additionalInfoTitle:'Additional Information',
@@ -29,7 +30,7 @@ const initialState = {
         fontFamily: 'Source Sans Pro',
     },
     itemStatus: {
-        picture: false,
+        picture: true,
         info: true,
         profile: true,
         additionalInfo: true,

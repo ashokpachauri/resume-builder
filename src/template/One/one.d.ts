@@ -9,6 +9,7 @@ export interface TProps {
         address: string;
         email: string;
         mobile: string;
+        dob: string;
         userData: string;
         profileTitle: string;
         profile: string;
