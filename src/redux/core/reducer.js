@@ -347,8 +347,8 @@ export default function core(state = initialState, action) {
         case actionTypes.DELETE_ACHIEVEMENT_DATA:
             if (!action.payload) return state;
 
-            const newA = JSON.parse(JSON.stringify(state.achievements));
-            newL = state.achievements.filter(({ id }) => id !== action.payload);
+            let newA = JSON.parse(JSON.stringify(state.achievements));
+            newA = state.achievements.filter(({ id }) => id !== action.payload);
             return {
                 ...state,
                 achievements: [...newA],
@@ -404,7 +404,7 @@ export default function core(state = initialState, action) {
         case actionTypes.DELETE_INTEREST_DATA:
             if (!action.payload) return state;
 
-            const newI = JSON.parse(JSON.stringify(state.interests));
+            let newI = JSON.parse(JSON.stringify(state.interests));
             newI = state.interests.filter(({ id }) => id !== action.payload);
             return {
                 ...state,
