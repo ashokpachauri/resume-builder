@@ -95,7 +95,7 @@ class TopNavbar extends React.Component<TProps, TState> {
             body: JSON.stringify(data),
         };
 
-        const res = await fetch(`${APIConfig.hostname}/download`, req);
+        const res = await fetch(`https://www.ropeyou.com/testpdf`, req);
         const blob = await res.blob();
         this.setState({ gifGenerateStatus: false });
         download(blob, fileName);
