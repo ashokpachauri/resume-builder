@@ -32,7 +32,7 @@ const initialState = {
         fontFamily: 'Source Sans Pro',
     },
     itemStatus: {
-        picture: true,
+        picture: false,
         info: true,
         profile: true,
         additionalInfo: true,

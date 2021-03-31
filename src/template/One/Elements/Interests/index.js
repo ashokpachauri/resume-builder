@@ -6,42 +6,37 @@ import { Toast, Util } from '@lib';
 
 import { Text, Dnd2Column } from '@component';
 
-import { addAchievement, updateAchievement, deleteAchievementData } from '../../../../redux/core/actions';
+import { addInterest, updateInterest, deleteInterestData } from '../../../../redux/core/actions';
 
 // import styles from './skills.module.scss';
 
-function Achievements(props) {
+function Interests(props) {
     const dispatch = useDispatch();
 
-    const _updateAchievement = (data) => {
+    const _updateInterest = (data) => {
         const storeReorder = Util.mapOrder(props.data, data, 'id');
-        dispatch(updateAchievement(storeReorder));
+        dispatch(updateInterest(storeReorder));
     };
 
     const _addNewItem = () => {
-        dispatch(addAchievement());
+        dispatch(addInterest());
     };
 
     const _removeItem = (id, data) => {
-        Toast.showUndo(id, data, 'achievements', 'Certification Item Removed');
-        dispatch(deleteAchievementData(id));
+        Toast.showUndo(id, data, 'interests', 'Interests Item Removed');
+        dispatch(deleteInterestData(id));
     };
 
     const { data } = props;
     return (
         <Dnd2Column
             data={data}
-            reorder={(e) => _updateAchievement(e)}
+            reorder={(e) => _updateInterest(e)}
             additem={_addNewItem}
             removeitem={(e) => _removeItem(e, data)}
             renderItem={(item) => (
                 <div style={{ background: '#fff' }}>
-                    <Text
-                        value={item.title}
-                        statename="achievements.title"
-                        stateid={item.id}
-                        placeholder="Certified Business Intelligence (BI)"
-                    />
+                    <Text value={item.title} statename="interests.title" stateid={item.id} placeholder="Reading Tech Article" />
                 </div>
             )}
         />
@@ -49,4 +44,4 @@ function Achievements(props) {
 }
 
 /* Export Component =============================== */
-export default Achievements;
+export default Interests;
