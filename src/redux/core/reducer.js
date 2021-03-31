@@ -8,16 +8,25 @@ const initialState = {
         mobile: '',
         userData: '',
         profile: '',
+        dob: '',
         infoTitle: 'Personal info',
         profileTitle: 'Profile',
+        additionalInfoTitle: 'Additional Information',
+        additionalInfo: 'Some work details, achievements or much more...',
         workExperienceTitle: 'Work experience',
         educationTitle: 'Education',
         skillsTitle: 'Skills',
+        languageTitle: 'Languages',
+        achievementTitle: 'Certification',
+        interestTitle: 'Interests',
         photo: 'images/nobody.jpg',
     },
     workExperience: [{ id: '1' }],
     education: [{ id: '1' }],
     skills: [{ id: '1' }],
+    languages: [{ id: '1' }],
+    achievements: [{ id: '1' }],
+    interests: [{ id: '1' }],
     theme: {
         color: '#03A9F4',
         fontFamily: 'Source Sans Pro',
@@ -26,9 +35,13 @@ const initialState = {
         picture: false,
         info: true,
         profile: true,
+        additionalInfo: true,
         workExperience: true,
         education: true,
         skills: true,
+        languages: true,
+        achievements: true,
+        interests: true,
     },
 };
 
@@ -236,7 +249,175 @@ export default function core(state = initialState, action) {
                 ...state,
                 skills: [...state.skills, ...action.payload],
             };
+        case actionTypes.ADD_NEW_LANGUAGE:
+            if (!action.payload) return state;
 
+            return {
+                ...state,
+                languages: [
+                    ...state.languages,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_LANGUAGE:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                languages: action.payload,
+            });
+
+        case actionTypes.UPDATE_LANGUAGE_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newLanguages = JSON.parse(JSON.stringify(state.languages));
+            const languagesIndex = state.languages
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (languagesIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newLanguages[languagesIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                languages: [...newLanguages],
+            };
+
+        case actionTypes.DELETE_LANGUAGE_DATA:
+            if (!action.payload) return state;
+
+            let newL = JSON.parse(JSON.stringify(state.languages));
+            newL = state.languages.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                languages: [...newL],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_LANGUAGE_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                languages: [...state.languages, ...action.payload],
+            };
+        case actionTypes.ADD_NEW_ACHIEVEMENT:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                achievements: [
+                    ...state.achievements,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_ACHIEVEMENT:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                achievements: action.payload,
+            });
+
+        case actionTypes.UPDATE_ACHIEVEMENT_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newAchievements = JSON.parse(JSON.stringify(state.achievements));
+            const achievementsIndex = state.achievements
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (achievementsIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newAchievements[achievementsIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                achievements: [...newAchievements],
+            };
+
+        case actionTypes.DELETE_ACHIEVEMENT_DATA:
+            if (!action.payload) return state;
+
+            const newA = JSON.parse(JSON.stringify(state.achievements));
+            newL = state.achievements.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                achievements: [...newA],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_ACHIEVEMENT_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                achievements: [...state.achievements, ...action.payload],
+            };
+
+        case actionTypes.ADD_NEW_INTEREST:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                interests: [
+                    ...state.interests,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_INTEREST:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                interests: action.payload,
+            });
+
+        case actionTypes.UPDATE_INTEREST_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newInterests = JSON.parse(JSON.stringify(state.interests));
+            const interestsIndex = state.interests
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (interestsIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newInterests[interestsIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                interests: [...newInterests],
+            };
+
+        case actionTypes.DELETE_INTEREST_DATA:
+            if (!action.payload) return state;
+
+            const newI = JSON.parse(JSON.stringify(state.interests));
+            newL = state.interests.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                interests: [...newI],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_INTEREST_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                interests: [...state.interests, ...action.payload],
+            };
         default:
             return { ...state };
     }

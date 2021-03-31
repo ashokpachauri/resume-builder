@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Text } from '@component';
-import { WorkExperience, Education, Skills, Photo } from './Elements';
+import { WorkExperience, Education, Skills, Languages, Achievements, Interests, Photo } from './Elements';
 import styles from './one.module.scss';
 
 import { TProps } from './one';
@@ -39,6 +39,7 @@ class Template extends React.Component<TProps> {
                         <Text value={this.props.userData.address} statename="userData.address" placeholder="address: Berlin, Germany" />
                         <Text value={this.props.userData.email} statename="userData.email" placeholder="sample@email.com" />
                         <Text value={this.props.userData.mobile} statename="userData.mobile" placeholder="(+1) 123 456 7890" />
+                        <Text value={this.props.userData.dob} statename="userData.dob" placeholder="DOB : DD/MM/YYYY" />
                         <Text value={this.props.userData.userData} statename="userData.userData" placeholder="Your other data" />
                     </div>
                 )}
@@ -99,6 +100,61 @@ class Template extends React.Component<TProps> {
                         <Skills data={this.props.skills} />
                     </div>
                 )}
+                {itemStatus.languages && (
+                    <div className={[styles.languages, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.languageTitle}
+                            statename="userData.languageTitle"
+                            placeholder="Language"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+
+                        <Languages data={this.props.languages} />
+                    </div>
+                )}
+                {itemStatus.achievements && (
+                    <div className={[styles.achievements, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.achievementTitle}
+                            statename="userData.achievementTitle"
+                            placeholder="Certifications"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+
+                        <Achievements data={this.props.achievements} />
+                    </div>
+                )}
+                {itemStatus.interests && (
+                    <div className={[styles.interests, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.interestTitle}
+                            statename="userData.interestTitle"
+                            placeholder="Interests"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+
+                        <Interests data={this.props.interests} />
+                    </div>
+                )}
+                {itemStatus.additionalInfo && (
+                    <div className={[styles.additionalInfo, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.additionalInfoTitle}
+                            statename="userData.additionalInfoTitle"
+                            placeholder="Additional Information"
+                            customclass={styles.title}
+                            tag="div"
+                        />
+                        <Text
+                            value={this.props.userData.additionalInfo}
+                            statename="userData.additionalInfo"
+                            placeholder="Some work details, achievements or much more..."
+                        />
+                    </div>
+                )}
             </div>
         );
     }
@@ -110,6 +166,8 @@ const mapStateToProps = (store: any) => ({
     workExperience: store.workExperience,
     education: store.education,
     skills: store.skills,
+    languages: store.languages,
+    achievements: store.achievements,
     itemStatus: store.itemStatus,
 });
 

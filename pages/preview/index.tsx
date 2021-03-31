@@ -69,7 +69,7 @@ class Home extends React.Component<TProps, TState> {
             },
             body: JSON.stringify(data),
         };
-
+        console.log(data);
         const res = await fetch(`${APIConfig.hostname}/download`, req);
         const blob = await res.blob();
         this.setState({ gifGenerateStatus: false });
@@ -80,7 +80,7 @@ class Home extends React.Component<TProps, TState> {
         return (
             <>
                 <Head>
-                    <title>preview | wtfresume</title>
+                    <title>Resume Preview | RYResume</title>
                 </Head>
                 <div style={{ fontFamily: this.props.theme.fontFamily }}>
                     {this.state.exportStatus !== 'true' && (
