@@ -390,7 +390,7 @@ class TopNavbar extends React.Component<TProps, TState> {
                         </div>
                     </Tippy>
 
-                    <!--<div
+                    <div
                         className={[styles.item, styles.tonNavbarBorderRight, styles.tonNavbarFelx1].join(' ')}
                         onClick={() => this.setState({ saveModal: true })}
                     >
@@ -400,9 +400,9 @@ class TopNavbar extends React.Component<TProps, TState> {
                             </div>
                             <div className={styles.bottomPart}>Save</div>
                         </div>
-                    </div>-->
+                    </div>
 
-                    <!--<div
+                    <div
                         className={[styles.item, styles.tonNavbarBorderRight, styles.tonNavbarFelx1].join(' ')}
                         onClick={() => this.setState({ loadModal: true })}
                     >
@@ -412,7 +412,7 @@ class TopNavbar extends React.Component<TProps, TState> {
                             </div>
                             <div className={styles.bottomPart}>Load</div>
                         </div>
-                    </div>-->
+                    </div>
 
                     <Link href="/preview">
                         <div className={[styles.item, styles.tonNavbarBorderRight, styles.tonNavbarFelx1].join(' ')}>
