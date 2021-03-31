@@ -27,7 +27,6 @@ export interface TProps {
     skills: [];
     languages: [];
     achievements: [];
-    interests: [];
     itemStatus: {
         [key: string]: boolean;
     };
