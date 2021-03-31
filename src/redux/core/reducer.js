@@ -41,6 +41,7 @@ const initialState = {
         skills: true,
         languages: true,
         achievements: true,
+        interests: true,
     },
 };
 
@@ -340,7 +341,7 @@ export default function core(state = initialState, action) {
             }
             return {
                 ...state,
-                achievements: [...newLanguages],
+                achievements: [...newAchievements],
             };
 
         case actionTypes.DELETE_ACHIEVEMENT_DATA:
@@ -359,6 +360,63 @@ export default function core(state = initialState, action) {
             return {
                 ...state,
                 achievements: [...state.achievements, ...action.payload],
+            };
+
+        case actionTypes.ADD_NEW_INTEREST:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                interests: [
+                    ...state.interests,
+                    {
+                        ...action.payload,
+                    },
+                ],
+            };
+
+        case actionTypes.UPDATE_INTEREST:
+            if (!action.payload) return state;
+
+            return Object.assign({}, state, {
+                interests: action.payload,
+            });
+
+        case actionTypes.UPDATE_INTEREST_DATA:
+            if (!action.payload || !action.payloadId) return state;
+
+            const newInterests = JSON.parse(JSON.stringify(state.interests));
+            const interestsIndex = state.interests
+                .map((itm) => {
+                    return itm.id;
+                })
+                .indexOf(action.payloadId);
+            if (interestsIndex > -1) {
+                Object.keys(action.payload).forEach(function (key) {
+                    newInterests[interestsIndex][key] = action.payload[key];
+                });
+            }
+            return {
+                ...state,
+                interests: [...newInterests],
+            };
+
+        case actionTypes.DELETE_INTEREST_DATA:
+            if (!action.payload) return state;
+
+            const newI = JSON.parse(JSON.stringify(state.interests));
+            newL = state.interests.filter(({ id }) => id !== action.payload);
+            return {
+                ...state,
+                interests: [...newI],
+            };
+
+        case actionTypes.ADD_DELETED_WORK_INTEREST_ITEM:
+            if (!action.payload) return state;
+
+            return {
+                ...state,
+                interests: [...state.interests, ...action.payload],
             };
         default:
             return { ...state };
