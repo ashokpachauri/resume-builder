@@ -155,6 +155,22 @@ class Template extends React.Component<TProps> {
                         />
                     </div>
                 )}
+                {itemStatus.references && (
+                    <div className={[styles.references, styles.box].join(' ')}>
+                        <Text
+                            value={this.props.userData.referencesTitle}
+                            statename="userData.referencesTitle"
+                            placeholder="References "
+                            customclass={styles.title}
+                            tag="div"
+                        />
+                        <Text
+                            value={this.props.userData.references}
+                            statename="userData.references"
+                            placeholder="References are available upon request..."
+                        />
+                    </div>
+                )}
             </div>
         );
     }

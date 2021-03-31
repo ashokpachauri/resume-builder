@@ -236,6 +236,13 @@ class TopNavbar extends React.Component<TProps, TState> {
                             Certifications
                         </span>
                     </div>
+
+                    <div className={styles.sectionItem}>
+                        {this._switchBtn('references')}
+                        <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('references')}>
+                            References
+                        </span>
+                    </div>
                 </div>
                 <div className={styles.sectionRight}>
                     <div className={styles.sectionItem}>
@@ -257,15 +264,16 @@ class TopNavbar extends React.Component<TProps, TState> {
                         </span>
                     </div>
                     <div className={styles.sectionItem}>
-                        {this._switchBtn('additionalInfo')}
-                        <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('additionalInfo')}>
-                            Additional Info
-                        </span>
-                    </div>
-                    <div className={styles.sectionItem}>
                         {this._switchBtn('interests')}
                         <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('interests')}>
                             Interests
+                        </span>
+                    </div>
+
+                    <div className={styles.sectionItem}>
+                        {this._switchBtn('additionalInfo')}
+                        <span className={styles.sectionItemText} onClick={() => this._switchBtnClick('additionalInfo')}>
+                            Additional Info
                         </span>
                     </div>
                 </div>
