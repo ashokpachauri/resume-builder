@@ -23,7 +23,7 @@ import storage from 'redux-persist/lib/storage';
 const persistConfig = {
     key: 'primary',
     storage,
-    whitelist: ['userData', 'workExperience', 'education', 'skills', 'languages', 'achievements', 'theme', 'itemStatus'], // place to select which state you want to persist
+    whitelist: ['userData', 'workExperience', 'education', 'skills', 'languages', 'achievements', 'interests', 'theme', 'itemStatus'], // place to select which state you want to persist
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
