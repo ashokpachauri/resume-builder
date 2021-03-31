@@ -30,6 +30,7 @@ const initialState = {
         picture: false,
         info: true,
         profile: true,
+        additionalInfo: true,
         workExperience: true,
         education: true,
         skills: true,
