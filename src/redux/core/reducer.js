@@ -37,6 +37,7 @@ const initialState = {
         education: true,
         skills: true,
         languages: true,
+        achievements: true,
     },
 };
 
