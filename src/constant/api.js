@@ -6,7 +6,7 @@
 export default {
     // The URL we're connecting to
     // hostname: 'http://localhost:3007',
-    hostname: 'http://api.ropeyou.com',
+    hostname: 'https://api.ropeyou.com',
     imgurHostname: 'https://api.imgur.com/3/image',
 
     endpoints: [
