@@ -1,7 +1,7 @@
 # RY Resume (Resume Builder)
 
 Modern real-time design and 100% free resume builder.
-### [https://resume.ropeyou.com/](https://resume.ropeyou.com/ "ryresume")
+### [https://resume.ropeyou.com/](https://resume.ropeyou.com/ "RYResume")
 
 
 ### Simple demo: 
