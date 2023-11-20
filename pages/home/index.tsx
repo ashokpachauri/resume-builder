@@ -18,7 +18,7 @@ export default function Home() {
 
                         <div className={styles.crBtn}>
                             <Link href="/resume-builder">
-                                <a>Build My Resume</a>
+                                <a>Create My Resume</a>
                             </Link>
                         </div>
                     </div>
